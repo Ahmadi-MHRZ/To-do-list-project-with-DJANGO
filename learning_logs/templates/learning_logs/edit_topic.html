@@ -1,0 +1,21 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+
+  <h3>موضوع خود را ویرایش کنید</h3>
+
+{% endblock page_header %}
+
+{% block content %}
+
+  <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
+
+  <p>ویرایش :</p>
+  
+  <form action="{% url 'learning_logs:edit_topic' topic.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">اعمال تغییرات</button>
+  </form>
+
+{% endblock content %}

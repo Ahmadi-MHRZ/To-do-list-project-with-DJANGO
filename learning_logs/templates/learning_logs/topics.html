@@ -1,0 +1,38 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+  <h1>موضوعات</h1>
+{% endblock page_header %}
+
+{% block content %}
+
+  
+
+
+  {% for topic in topics %}
+      <div class="card mb-3">
+
+        <h5 class="card-header">
+          <small>
+            <a href="{% url 'learning_logs:edit_topic' topic.id %}">ویرایش موضوع</a>
+          </small>                    
+        </h5>
+        <div class="card-body">
+          <h2>
+            <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+          </h2>
+        </div>
+        
+      </div>
+
+
+  {% empty %}
+    <li>هنوز هیچ موضوعی اضافه نشده</li>
+  {% endfor %}
+
+
+<a href="{% url 'learning_logs:new_topic' %}">
+  ایجاد یک موضوع جدید
+</a>
+
+{% endblock content %}

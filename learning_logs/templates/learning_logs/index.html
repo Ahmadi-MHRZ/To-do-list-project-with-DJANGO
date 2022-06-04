@@ -1,0 +1,18 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+
+  <div class="jumbotron">
+    <h1 class="display-3">  روند آموزشی خود را زیر نظر بگیرید و گزارش پیشرفت خود را ثبت کنید</h1>
+
+    <p class="lead">  گزارش یادگیری خود را بسازید و فهرستی از موضوعاتی که در مورد آنها یاد می گیرید را یادداشت کنید و در 
+                                  هر زمان که چیز جدیدی در مورد موضوعی یاد گرفتید، مطالبی که آموخته اید را به موضوع مرتبط اضافه کنید                         
+                           </p>
+
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+      role="button">ایجاد حساب کاربری جدید &raquo;</a>          
+
+  </div>
+
+{% endblock page_header %}
+

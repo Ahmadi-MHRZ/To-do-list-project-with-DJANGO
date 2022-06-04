@@ -1,0 +1,19 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+  <h1> گزارش پیشرفت کارهای خود را یادداشت کنید </h1>
+{% endblock page_header %}
+
+{% block content %}
+
+  <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
+
+  <p>اضافه کردن یک گزارش جدید:</p>
+  
+  <form action="{% url 'learning_logs:new_entry' topic.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name='submit'>اضافه کردن</button>
+  </form>
+
+{% endblock content %}
