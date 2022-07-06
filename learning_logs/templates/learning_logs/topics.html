@@ -13,9 +13,11 @@
       <div class="card mb-3">
 
         <h5 class="card-header">
+          
           <small>
-            <a href="{% url 'learning_logs:edit_topic' topic.id %}">ویرایش موضوع</a>
-          </small>                    
+            <a href="{% url 'learning_logs:edit_topic' topic.id %}" class="btn btn-primary" role="button">ویرایش موضوع</a>
+          </small> 
+          <a href="{% url 'learning_logs:delete_topic' topic.id %}" class="btn btn-danger btn-sm" role="button">حذف موضوع</a>                   
         </h5>
         <div class="card-body">
           <h2>
@@ -31,7 +33,7 @@
   {% endfor %}
 
 
-<a href="{% url 'learning_logs:new_topic' %}">
+<a href="{% url 'learning_logs:new_topic' %}" class="btn btn-success" role="button">
   ایجاد یک موضوع جدید
 </a>
 

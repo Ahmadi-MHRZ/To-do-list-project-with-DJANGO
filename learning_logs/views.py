@@ -95,6 +95,14 @@ def edit_topic(request,topic_id):
 			return redirect('learning_logs:topic',topic_id=topic.id)
 	context ={'topic':topic,'form':form}
 	return render(request,'learning_logs/edit_topic.html',context) 
+
+@login_required
+
+def delete_topic(request, topic_id):
+
+	topic= Topic.objects.get(id=topic_id) 
+	topic.delete() 
+	return render(request,'learning_logs/topics.html', {'topic': topic})
 			
 
 
